@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doméa — Luxury Interior Design Studio | Bespoke Residential Interiors</title>
+  <meta name="description" content="Doméa is a luxury interior design studio crafting timeless, elegant, and high-end residential interiors. Bespoke design tailored for refined living." />
+  <meta name="keywords" content="luxury interior design, high-end interiors, bespoke design, villa interiors, premium residential design, Doméa" />
+  <meta property="og:title" content="Doméa — Designing Spaces That Speak Luxury" />
+  <meta property="og:description" content="Bespoke interior design tailored for refined living." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#F5F1EB',
+            pearl: '#FAF7F2',
+            sand: '#E8DFD1',
+            beige: '#D4C4A8',
+            taupe: '#8A7F6E',
+            charcoal: '#1C1C1C',
+            graphite: '#2D2A26',
+            gold: '#B8935A',
+            'gold-light': '#D4B684',
+            'gold-dark': '#8F6F3E',
+            ink: '#0A0A0A'
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['Inter', 'sans-serif']
+          },
+          letterSpacing: {
+            luxury: '0.28em',
+            wide2: '0.18em'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body class="bg-pearl text-charcoal font-sans antialiased overflow-x-hidden">
+
+  <!-- ========== LOADING SCREEN ========== -->
+  <div id="loader" class="fixed inset-0 z-[999] bg-ink flex items-center justify-center">
+    <div class="text-center">
+      <div class="overflow-hidden">
+        <h1 class="loader-brand font-serif text-5xl md:text-7xl text-cream tracking-luxury font-light">Doméa</h1>
+      </div>
+      <div class="loader-line mt-6 mx-auto h-px bg-gold/60"></div>
+      <p class="loader-sub mt-4 text-[10px] text-cream/60 tracking-luxury uppercase">Crafted Living</p>
+    </div>
+  </div>
+
+  <!-- ========== CUSTOM CURSOR ========== -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ========== NAVBAR ========== -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+    <nav class="flex items-center justify-between px-6 md:px-12 lg:px-20 py-6">
+      <a href="#home" class="nav-brand font-serif text-2xl md:text-3xl tracking-luxury font-light">Doméa</a>
+
+      <ul class="hidden lg:flex items-center gap-10 text-[11px] tracking-wide2 uppercase font-light">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#process" class="nav-link">Process</a></li>
+        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+        <li><a href="#blog" class="nav-link">Blog</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <a href="#contact" class="hidden lg:inline-flex items-center gap-2 text-[11px] tracking-wide2 uppercase border border-current px-5 py-3 hover:bg-charcoal hover:text-cream hover:border-charcoal transition-all duration-500">
+        Book Consultation
+      </a>
+
+      <button id="menuToggle" class="lg:hidden w-10 h-10 flex flex-col items-end justify-center gap-1.5" aria-label="Menu">
+        <span class="block h-px w-7 bg-current transition-all"></span>
+        <span class="block h-px w-5 bg-current transition-all"></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ========== MOBILE MENU ========== -->
+  <div id="mobileMenu" class="fixed inset-0 z-40 bg-ink text-cream translate-x-full transition-transform duration-700 ease-[cubic-bezier(0.7,0,0.3,1)]">
+    <div class="h-full flex flex-col justify-center items-center gap-8 text-center">
+      <a href="#home" class="mobile-link font-serif text-4xl tracking-wide">Home</a>
+      <a href="#projects" class="mobile-link font-serif text-4xl tracking-wide">Projects</a>
+      <a href="#services" class="mobile-link font-serif text-4xl tracking-wide">Services</a>
+      <a href="#process" class="mobile-link font-serif text-4xl tracking-wide">Process</a>
+      <a href="#testimonials" class="mobile-link font-serif text-4xl tracking-wide">Testimonials</a>
+      <a href="#blog" class="mobile-link font-serif text-4xl tracking-wide">Blog</a>
+      <a href="#contact" class="mobile-link font-serif text-4xl tracking-wide">Contact</a>
+      <div class="mt-8 h-px w-24 bg-gold/40"></div>
+      <p class="text-[10px] tracking-luxury uppercase text-cream/60">Doméa — Crafted Living</p>
+    </div>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section id="home" class="relative h-screen w-full overflow-hidden">
+    <div class="hero-bg absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2400&auto=format&fit=crop"
+           alt="Luxury modern living room with warm neutral palette"
+           class="w-full h-full object-cover scale-110" loading="eager" />
+      <div class="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/20 to-ink/60"></div>
+    </div>
+
+    <div class="relative z-10 h-full flex flex-col justify-end pb-24 md:pb-28 px-6 md:px-12 lg:px-20 text-cream">
+      <div class="max-w-5xl">
+        <p class="hero-tag text-[11px] tracking-luxury uppercase mb-8 opacity-0 flex items-center gap-3">
+          <span class="h-px w-10 bg-gold-light inline-block"></span>
+          <span>Est. Luxury Interiors</span>
+        </p>
+        <h1 class="hero-title font-serif text-[12vw] md:text-[7.5vw] lg:text-[6vw] leading-[0.95] font-light">
+          <span class="hero-word block overflow-hidden"><span class="block">Designing Spaces</span></span>
+          <span class="hero-word block overflow-hidden"><span class="block italic text-gold-light">That Speak</span></span>
+          <span class="hero-word block overflow-hidden"><span class="block">Luxury.</span></span>
+        </h1>
+        <p class="hero-sub mt-10 max-w-xl text-base md:text-lg font-light text-cream/80 opacity-0">
+          Bespoke interior design tailored for refined living — where every detail is a quiet celebration of craft.
+        </p>
+        <div class="hero-cta mt-12 flex flex-wrap gap-5 opacity-0">
+          <a href="#projects" class="btn-luxury group">
+            <span>View Projects</span>
+            <svg class="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#contact" class="btn-ghost">
+            <span>Book Consultation</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 right-6 md:right-12 lg:right-20 z-10 text-cream hidden md:flex flex-col items-center gap-3">
+      <span class="text-[10px] tracking-luxury uppercase rotate-90 origin-center translate-y-8">Scroll</span>
+      <div class="scroll-line w-px h-16 bg-cream/40 relative overflow-hidden"></div>
+    </div>
+  </section>
+
+  <!-- ========== ROTATING BRAND MARQUEE ========== -->
+  <section class="bg-ink text-cream py-10 overflow-hidden border-y border-cream/10">
+    <div class="marquee flex gap-20 whitespace-nowrap">
+      <div class="marquee-track flex gap-20 whitespace-nowrap">
+        <span class="font-serif italic text-2xl md:text-3xl tracking-wide font-light">Doméa — Crafted Living</span>
+        <span class="text-gold">✦</span>
+        <span class="font-serif italic text-2xl md:text-3xl tracking-wide font-light">Doméa — Timeless Interiors</span>
+        <span class="text-gold">✦</span>
+        <span class="font-serif italic text-2xl md:text-3xl tracking-wide font-light">Doméa — Elevated Spaces</span>
+        <span class="text-gold">✦</span>
+        <span class="font-serif italic text-2xl md:text-3xl tracking-wide font-light">Doméa — Designed for Life</span>
+        <span class="text-gold">✦</span>
+        <span class="font-serif italic text-2xl md:text-3xl tracking-wide font-light">Doméa — Where Luxury Lives</span>
+        <span class="text-gold">✦</span>
+      </div>
+      <div class="marquee-track flex gap-20 whitespace-nowrap" aria-hidden="true">
+        <span class="font-serif italic text-2xl md:text-3xl tracking-wide font-light">Doméa — Crafted Living</span>
+        <span class="text-gold">✦</span>
+        <span class="font-serif italic text-2xl md:text-3xl tracking-wide font-light">Doméa — Timeless Interiors</span>
+        <span class="text-gold">✦</span>
+        <span class="font-serif italic text-2xl md:text-3xl tracking-wide font-light">Doméa — Elevated Spaces</span>
+        <span class="text-gold">✦</span>
+        <span class="font-serif italic text-2xl md:text-3xl tracking-wide font-light">Doméa — Designed for Life</span>
+        <span class="text-gold">✦</span>
+        <span class="font-serif italic text-2xl md:text-3xl tracking-wide font-light">Doméa — Where Luxury Lives</span>
+        <span class="text-gold">✦</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about" class="py-28 md:py-40 px-6 md:px-12 lg:px-20 bg-pearl">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+      <div class="lg:col-span-5 reveal-img">
+        <div class="relative overflow-hidden aspect-[4/5]">
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1600&auto=format&fit=crop"
+               alt="Refined interior detail with neutral palette"
+               class="w-full h-full object-cover parallax-img" loading="lazy" />
+        </div>
+        <div class="mt-6 flex items-center gap-4">
+          <div class="h-px w-16 bg-gold/60"></div>
+          <span class="text-[10px] tracking-luxury uppercase text-taupe">A Studio of Craft</span>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <p class="section-eyebrow">About Doméa</p>
+        <h2 class="section-heading mt-6">
+          A home is more than a space — <span class="italic text-gold-dark">it is a reflection of identity.</span>
+        </h2>
+        <p class="mt-10 text-lg font-light leading-relaxed text-graphite/80 max-w-xl reveal-up">
+          At Doméa, we believe every home tells a story. Each project is thoughtfully crafted to balance elegance, comfort, and functionality — where form meets feeling, and every surface is a quiet invitation to live beautifully.
+        </p>
+        <p class="mt-6 text-lg font-light leading-relaxed text-graphite/80 max-w-xl reveal-up">
+          Drawing from the Latin <em class="italic">domus</em>, meaning home, we shape refined interiors for those who understand that luxury is not an ornament — it is an atmosphere.
+        </p>
+
+        <div class="mt-14 grid grid-cols-3 gap-6 reveal-up">
+          <div>
+            <p class="font-serif text-5xl font-light text-charcoal">120<span class="text-gold">+</span></p>
+            <p class="mt-2 text-[11px] tracking-wide2 uppercase text-taupe">Projects Delivered</p>
+          </div>
+          <div>
+            <p class="font-serif text-5xl font-light text-charcoal">15<span class="text-gold">+</span></p>
+            <p class="mt-2 text-[11px] tracking-wide2 uppercase text-taupe">Years of Craft</p>
+          </div>
+          <div>
+            <p class="font-serif text-5xl font-light text-charcoal">48<span class="text-gold">+</span></p>
+            <p class="mt-2 text-[11px] tracking-wide2 uppercase text-taupe">Cities Served</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section id="projects" class="py-28 md:py-40 px-6 md:px-12 lg:px-20 bg-cream">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-20">
+        <div>
+          <p class="section-eyebrow">Selected Works</p>
+          <h2 class="section-heading mt-6 max-w-2xl">Portfolio of <span class="italic text-gold-dark">quiet luxury.</span></h2>
+        </div>
+        <p class="max-w-sm text-graphite/70 font-light">A curated selection of residences where materiality, light, and silhouette converge.</p>
+      </div>
+
+      <!-- Category filter -->
+      <div class="flex flex-wrap gap-2 md:gap-4 mb-14 filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="living">Living Room</button>
+        <button class="filter-btn" data-filter="bedroom">Bedroom</button>
+        <button class="filter-btn" data-filter="kitchen">Kitchen</button>
+        <button class="filter-btn" data-filter="wardrobe">Wardrobe</button>
+        <button class="filter-btn" data-filter="prayer">Prayer Room</button>
+        <button class="filter-btn" data-filter="bath">Bath</button>
+        <button class="filter-btn" data-filter="dining">Dining</button>
+      </div>
+
+      <!-- Projects grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10" id="projectsGrid">
+
+        <article class="project-card group" data-cat="living">
+          <div class="project-img-wrap">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1600&auto=format&fit=crop" alt="Living room project" />
+            <div class="project-overlay">
+              <span class="text-[10px] tracking-luxury uppercase text-gold-light">View Project</span>
+            </div>
+          </div>
+          <div class="project-meta">
+            <div>
+              <h3 class="project-title">Residence for Mr. Sharma</h3>
+              <p class="project-desc">A serene living room balancing travertine, linen, and warm oak tones.</p>
+            </div>
+            <span class="project-tag">Living Room</span>
+          </div>
+        </article>
+
+        <article class="project-card group row-span-2 md:row-span-1" data-cat="bedroom">
+          <div class="project-img-wrap aspect-[4/5]">
+            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1600&auto=format&fit=crop" alt="Bedroom project" />
+            <div class="project-overlay">
+              <span class="text-[10px] tracking-luxury uppercase text-gold-light">View Project</span>
+            </div>
+          </div>
+          <div class="project-meta">
+            <div>
+              <h3 class="project-title">Villa Agarwal</h3>
+              <p class="project-desc">A whisper-quiet bedroom wrapped in boucle, burnished brass, and soft ivory.</p>
+            </div>
+            <span class="project-tag">Bedroom</span>
+          </div>
+        </article>
+
+        <article class="project-card group" data-cat="kitchen">
+          <div class="project-img-wrap">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop" alt="Kitchen project" />
+            <div class="project-overlay">
+              <span class="text-[10px] tracking-luxury uppercase text-gold-light">View Project</span>
+            </div>
+          </div>
+          <div class="project-meta">
+            <div>
+              <h3 class="project-title">Penthouse Mehra</h3>
+              <p class="project-desc">Monolithic Calacatta island anchored by hand-rubbed walnut cabinetry.</p>
+            </div>
+            <span class="project-tag">Kitchen</span>
+          </div>
+        </article>
+
+        <article class="project-card group" data-cat="wardrobe">
+          <div class="project-img-wrap">
+            <img src="https://images.unsplash.com/photo-1558997519-83ea9252edf8?q=80&w=1600&auto=format&fit=crop" alt="Wardrobe project" />
+            <div class="project-overlay">
+              <span class="text-[10px] tracking-luxury uppercase text-gold-light">View Project</span>
+            </div>
+          </div>
+          <div class="project-meta">
+            <div>
+              <h3 class="project-title">Residence for Mrs. Kapoor</h3>
+              <p class="project-desc">A bespoke walk-in wardrobe in fluted oak and antique bronze detail.</p>
+            </div>
+            <span class="project-tag">Wardrobe</span>
+          </div>
+        </article>
+
+        <article class="project-card group" data-cat="living">
+          <div class="project-img-wrap">
+            <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=1600&auto=format&fit=crop" alt="Modern living room" />
+            <div class="project-overlay">
+              <span class="text-[10px] tracking-luxury uppercase text-gold-light">View Project</span>
+            </div>
+          </div>
+          <div class="project-meta">
+            <div>
+              <h3 class="project-title">Sea-Facing Apartment</h3>
+              <p class="project-desc">A contemplative living space composed around natural light and raw silk.</p>
+            </div>
+            <span class="project-tag">Living Room</span>
+          </div>
+        </article>
+
+        <article class="project-card group" data-cat="prayer">
+          <div class="project-img-wrap">
+            <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=1600&auto=format&fit=crop" alt="Prayer room project" />
+            <div class="project-overlay">
+              <span class="text-[10px] tracking-luxury uppercase text-gold-light">View Project</span>
+            </div>
+          </div>
+          <div class="project-meta">
+            <div>
+              <h3 class="project-title">Residence for Dr. Iyer</h3>
+              <p class="project-desc">A contemplative prayer room in Indian marble and hand-carved teak.</p>
+            </div>
+            <span class="project-tag">Prayer Room</span>
+          </div>
+        </article>
+
+        <article class="project-card group" data-cat="bath">
+          <div class="project-img-wrap">
+            <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=1600&auto=format&fit=crop" alt="Luxury bath" />
+            <div class="project-overlay">
+              <span class="text-[10px] tracking-luxury uppercase text-gold-light">View Project</span>
+            </div>
+          </div>
+          <div class="project-meta">
+            <div>
+              <h3 class="project-title">Hillside Villa</h3>
+              <p class="project-desc">An ensuite sculpted from bookmatched stone and brushed nickel.</p>
+            </div>
+            <span class="project-tag">Bath</span>
+          </div>
+        </article>
+
+        <article class="project-card group" data-cat="dining">
+          <div class="project-img-wrap">
+            <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?q=80&w=1600&auto=format&fit=crop" alt="Dining room" />
+            <div class="project-overlay">
+              <span class="text-[10px] tracking-luxury uppercase text-gold-light">View Project</span>
+            </div>
+          </div>
+          <div class="project-meta">
+            <div>
+              <h3 class="project-title">The Khanna Estate</h3>
+              <p class="project-desc">A dining pavilion in hand-finished plaster with a single sculptural light.</p>
+            </div>
+            <span class="project-tag">Dining</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES ========== -->
+  <section id="services" class="py-28 md:py-40 px-6 md:px-12 lg:px-20 bg-pearl">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-20">
+        <p class="section-eyebrow">Our Services</p>
+        <h2 class="section-heading mt-6">Crafted with <span class="italic text-gold-dark">intention.</span></h2>
+        <p class="mt-8 text-graphite/70 font-light">Full-spectrum design from concept to completion — each service woven into a singular, seamless experience.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 border-t border-charcoal/10">
+        <div class="service-card">
+          <span class="service-num">01</span>
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="0.8"><path d="M6 42V12l18-6 18 6v30M14 42V22h20v20M20 42v-8h8v8"/></svg>
+          <h3 class="service-title">Interior Design</h3>
+          <p class="service-desc">Full residential design — from spatial narrative to final styling, tailored to the way you live.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-num">02</span>
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="0.8"><rect x="8" y="8" width="32" height="32"/><path d="M8 18h32M18 8v32"/><circle cx="30" cy="28" r="3"/></svg>
+          <h3 class="service-title">Turnkey Projects</h3>
+          <p class="service-desc">End-to-end project delivery with single-point accountability — from demolition to doorstep.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-num">03</span>
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="0.8"><path d="M6 24h36M24 6v36M12 12l24 24M36 12L12 36"/></svg>
+          <h3 class="service-title">Space Planning</h3>
+          <p class="service-desc">Considered architecture of flow, light, and proportion — the invisible work of great interiors.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-num">04</span>
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="0.8"><path d="M8 14h32v24H8zM8 22h32M16 14v-6h16v6M16 38v4M32 38v4"/></svg>
+          <h3 class="service-title">Custom Furniture</h3>
+          <p class="service-desc">Atelier-made furniture pieces designed as heirlooms — materials sourced, joinery refined.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-num">05</span>
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="0.8"><circle cx="24" cy="18" r="10"/><path d="M20 28h8v10h-8zM22 38h4v4h-4zM14 8l-4-4M34 8l4-4M8 18H4M44 18h-4"/></svg>
+          <h3 class="service-title">Lighting Design</h3>
+          <p class="service-desc">Layered lighting choreography — ambient, sculptural, and emotional.</p>
+        </div>
+        <div class="service-card">
+          <span class="service-num">06</span>
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="0.8"><path d="M24 4v40M4 24h40M8 8l32 32M40 8L8 40"/></svg>
+          <h3 class="service-title">Art Curation</h3>
+          <p class="service-desc">Art, objects, and textiles curated to inhabit your interior with soul.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROCESS ========== -->
+  <section id="process" class="py-28 md:py-40 px-6 md:px-12 lg:px-20 bg-ink text-cream">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-12 gap-10 mb-20">
+        <div class="lg:col-span-5">
+          <p class="section-eyebrow text-gold-light">The Doméa Process</p>
+          <h2 class="section-heading-light mt-6">Four quiet <span class="italic text-gold-light">chapters.</span></h2>
+        </div>
+        <p class="lg:col-span-6 lg:col-start-7 text-cream/70 font-light text-lg self-end">Every home begins the same way — with listening. From that first conversation, the design unfolds in measured, deliberate steps.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-0 border-t border-cream/15">
+        <div class="process-step">
+          <span class="process-num">01</span>
+          <h3 class="process-title">Consultation</h3>
+          <p class="process-desc">Understanding client vision, rhythm, and lifestyle — the foundation of every Doméa home.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-num">02</span>
+          <h3 class="process-title">Concept Design</h3>
+          <p class="process-desc">Layouts, mood boards, and material palettes — a first glimpse of the atmosphere to come.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-num">03</span>
+          <h3 class="process-title">Execution</h3>
+          <p class="process-desc">On-site coordination, artisanal craftsmanship, and uncompromising quality control.</p>
+        </div>
+        <div class="process-step">
+          <span class="process-num">04</span>
+          <h3 class="process-title">Final Styling</h3>
+          <p class="process-desc">Finishing touches, art placement, and the soft details that turn a house into a home.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LUXURY EXPERIENCE ========== -->
+  <section class="py-28 md:py-40 px-6 md:px-12 lg:px-20 bg-cream relative overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-20">
+        <p class="section-eyebrow">What Sets Us Apart</p>
+        <h2 class="section-heading mt-6">The <span class="italic text-gold-dark">Doméa</span> Experience.</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-16">
+        <div class="experience-item"><span class="exp-num">01</span><p>Bespoke design tailored to each client</p></div>
+        <div class="experience-item"><span class="exp-num">02</span><p>Premium material selection — marble, wood, metals</p></div>
+        <div class="experience-item"><span class="exp-num">03</span><p>Smart space optimization</p></div>
+        <div class="experience-item"><span class="exp-num">04</span><p>Seamless turnkey execution</p></div>
+        <div class="experience-item"><span class="exp-num">05</span><p>Attention to micro-details</p></div>
+        <div class="experience-item"><span class="exp-num">06</span><p>Timeless design approach</p></div>
+        <div class="experience-item"><span class="exp-num">07</span><p>High-end finishes and textures</p></div>
+        <div class="experience-item"><span class="exp-num">08</span><p>A personalized client experience</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BEFORE / AFTER ========== -->
+  <section class="py-28 md:py-40 px-6 md:px-12 lg:px-20 bg-pearl">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <p class="section-eyebrow">Transformation</p>
+        <h2 class="section-heading mt-6">Before &amp; <span class="italic text-gold-dark">After.</span></h2>
+        <p class="mt-6 text-graphite/70 font-light">Drag across to witness the transformation — a Mumbai residence reimagined.</p>
+      </div>
+
+      <div class="ba-slider" id="baSlider">
+        <img class="ba-after" src="https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=2000&auto=format&fit=crop" alt="After" />
+        <div class="ba-before-wrap" id="baBefore">
+          <img class="ba-before" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=2000&auto=format&fit=crop" alt="Before" />
+          <span class="ba-label ba-label-before">Before</span>
+        </div>
+        <span class="ba-label ba-label-after">After</span>
+        <div class="ba-handle" id="baHandle">
+          <div class="ba-handle-line"></div>
+          <div class="ba-handle-circle">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 6l-4 6 4 6M16 6l4 6-4 6"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section id="testimonials" class="py-28 md:py-40 px-6 md:px-12 lg:px-20 bg-cream">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-20">
+        <p class="section-eyebrow">Kind Words</p>
+        <h2 class="section-heading mt-6">Clients on <span class="italic text-gold-dark">Doméa.</span></h2>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-8">
+        <figure class="testimonial-card">
+          <svg class="w-8 h-8 text-gold mb-6" viewBox="0 0 24 24" fill="currentColor"><path d="M4 12q0-4 2.5-6.5T13 3v3q-3 0-4.5 1.5T7 12h3v9H4v-9zm10 0q0-4 2.5-6.5T23 3v3q-3 0-4.5 1.5T17 12h3v9h-6v-9z"/></svg>
+          <blockquote class="font-serif text-xl md:text-2xl font-light leading-relaxed italic text-charcoal">
+            "Doméa transformed our space into something truly exceptional. Every detail felt intentional and luxurious."
+          </blockquote>
+          <figcaption class="mt-8 flex items-center gap-4">
+            <div class="h-px w-10 bg-gold"></div>
+            <div>
+              <p class="text-sm font-medium">Mr. &amp; Mrs. Sharma</p>
+              <p class="text-[10px] tracking-luxury uppercase text-taupe mt-1">Villa Owners, Alibaug</p>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="testimonial-card">
+          <svg class="w-8 h-8 text-gold mb-6" viewBox="0 0 24 24" fill="currentColor"><path d="M4 12q0-4 2.5-6.5T13 3v3q-3 0-4.5 1.5T7 12h3v9H4v-9zm10 0q0-4 2.5-6.5T23 3v3q-3 0-4.5 1.5T17 12h3v9h-6v-9z"/></svg>
+          <blockquote class="font-serif text-xl md:text-2xl font-light leading-relaxed italic text-charcoal">
+            "Working with Doméa was effortless. They understood our life before they designed our home."
+          </blockquote>
+          <figcaption class="mt-8 flex items-center gap-4">
+            <div class="h-px w-10 bg-gold"></div>
+            <div>
+              <p class="text-sm font-medium">Ananya Mehra</p>
+              <p class="text-[10px] tracking-luxury uppercase text-taupe mt-1">Penthouse, Mumbai</p>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="testimonial-card">
+          <svg class="w-8 h-8 text-gold mb-6" viewBox="0 0 24 24" fill="currentColor"><path d="M4 12q0-4 2.5-6.5T13 3v3q-3 0-4.5 1.5T7 12h3v9H4v-9zm10 0q0-4 2.5-6.5T23 3v3q-3 0-4.5 1.5T17 12h3v9h-6v-9z"/></svg>
+          <blockquote class="font-serif text-xl md:text-2xl font-light leading-relaxed italic text-charcoal">
+            "Materials, light, silence — Doméa composes interiors the way musicians write symphonies."
+          </blockquote>
+          <figcaption class="mt-8 flex items-center gap-4">
+            <div class="h-px w-10 bg-gold"></div>
+            <div>
+              <p class="text-sm font-medium">Dr. Rajiv Iyer</p>
+              <p class="text-[10px] tracking-luxury uppercase text-taupe mt-1">Hillside Residence, Lonavala</p>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BLOG ========== -->
+  <section id="blog" class="py-28 md:py-40 px-6 md:px-12 lg:px-20 bg-pearl">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-20">
+        <div>
+          <p class="section-eyebrow">Journal</p>
+          <h2 class="section-heading mt-6">Notes on <span class="italic text-gold-dark">living beautifully.</span></h2>
+        </div>
+        <a href="#" class="link-arrow">Read All <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+        <article class="blog-card">
+          <div class="blog-img"><img src="https://images.unsplash.com/photo-1616593969930-5ae2ea8e9f1a?q=80&w=1200&auto=format&fit=crop" alt="" /></div>
+          <span class="blog-cat">Trends</span>
+          <h3 class="blog-title">Modern Luxury Interior Trends</h3>
+          <p class="blog-excerpt">A quiet shift — from ornament to atmosphere — defines the new language of luxury.</p>
+          <a href="#" class="blog-read">Read article</a>
+        </article>
+        <article class="blog-card">
+          <div class="blog-img"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop" alt="" /></div>
+          <span class="blog-cat">Living Room</span>
+          <h3 class="blog-title">Designing a Premium Living Room</h3>
+          <p class="blog-excerpt">How proportion, fabric, and a single sculptural piece reshape a living room.</p>
+          <a href="#" class="blog-read">Read article</a>
+        </article>
+        <article class="blog-card">
+          <div class="blog-img"><img src="https://images.unsplash.com/photo-1616137422495-1e9e46e2aa77?q=80&w=1200&auto=format&fit=crop" alt="" /></div>
+          <span class="blog-cat">Space</span>
+          <h3 class="blog-title">Space Optimization for Urban Homes</h3>
+          <p class="blog-excerpt">Finding generosity in constraint — the art of editing, not enlarging.</p>
+          <a href="#" class="blog-read">Read article</a>
+        </article>
+        <article class="blog-card">
+          <div class="blog-img"><img src="https://images.unsplash.com/photo-1616627451515-0c0a7bb37ac4?q=80&w=1200&auto=format&fit=crop" alt="" /></div>
+          <span class="blog-cat">Materials</span>
+          <h3 class="blog-title">Choosing Materials for Elegant Interiors</h3>
+          <p class="blog-excerpt">Travertine, linen, raw silk, unlacquered brass — and the stories they hold.</p>
+          <a href="#" class="blog-read">Read article</a>
+        </article>
+        <article class="blog-card">
+          <div class="blog-img"><img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?q=80&w=1200&auto=format&fit=crop" alt="" /></div>
+          <span class="blog-cat">Lighting</span>
+          <h3 class="blog-title">Lighting Tips for Luxury Spaces</h3>
+          <p class="blog-excerpt">Why a room's most important furnishing may be the light you cannot see.</p>
+          <a href="#" class="blog-read">Read article</a>
+        </article>
+        <article class="blog-card">
+          <div class="blog-img"><img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?q=80&w=1200&auto=format&fit=crop" alt="" /></div>
+          <span class="blog-cat">Atelier</span>
+          <h3 class="blog-title">Inside the Doméa Atelier</h3>
+          <p class="blog-excerpt">A behind-the-scenes look at the studio, the craftsmen, and the making of a home.</p>
+          <a href="#" class="blog-read">Read article</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact" class="py-28 md:py-40 px-6 md:px-12 lg:px-20 bg-ink text-cream relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <img src="https://images.unsplash.com/photo-1600607687644-a59deb9b5f5c?q=80&w=2400&auto=format&fit=crop" alt="" class="w-full h-full object-cover" />
+    </div>
+    <div class="relative max-w-6xl mx-auto grid lg:grid-cols-12 gap-12 lg:gap-20">
+      <div class="lg:col-span-5">
+        <p class="section-eyebrow text-gold-light">Contact</p>
+        <h2 class="section-heading-light mt-6">Start your <span class="italic text-gold-light">dream space.</span></h2>
+        <p class="mt-8 text-cream/70 font-light leading-relaxed max-w-md">A short conversation is where every Doméa home begins. Share a few details and we'll reach out within 24 hours.</p>
+
+        <div class="mt-12 space-y-6 text-cream/80 font-light">
+          <div class="flex items-start gap-4">
+            <div class="h-px w-10 bg-gold-light mt-3"></div>
+            <div>
+              <p class="text-[10px] tracking-luxury uppercase text-gold-light">Studio</p>
+              <p class="mt-2">14 Rose Garden, Bandra West, Mumbai 400050</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="h-px w-10 bg-gold-light mt-3"></div>
+            <div>
+              <p class="text-[10px] tracking-luxury uppercase text-gold-light">Enquiries</p>
+              <p class="mt-2">studio@domea.in &nbsp;·&nbsp; +91 98765 43210</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form class="lg:col-span-7 space-y-8" id="contactForm" novalidate>
+        <div class="form-field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" required />
+        </div>
+        <div class="form-field">
+          <label for="projectType">Project Type</label>
+          <select id="projectType" name="projectType" required>
+            <option value="" disabled selected></option>
+            <option>Full Villa Interior</option>
+            <option>Apartment Interior</option>
+            <option>Single Room Design</option>
+            <option>Custom Furniture</option>
+            <option>Consultation Only</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="message">Tell us about your space (optional)</label>
+          <textarea id="message" name="message" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn-luxury-light group mt-4">
+          <span>Book Consultation</span>
+          <svg class="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+        <p id="formStatus" class="text-sm text-gold-light font-light opacity-0 transition-opacity"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-ink text-cream/80 pt-20 pb-10 px-6 md:px-12 lg:px-20 border-t border-cream/10">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-12 gap-12 pb-16">
+        <div class="md:col-span-5">
+          <p class="font-serif text-4xl tracking-luxury font-light text-cream">Doméa</p>
+          <p class="mt-6 max-w-xs text-cream/60 text-sm font-light leading-relaxed">A luxury interior design studio crafting timeless, elegant, and high-end residential interiors for refined living.</p>
+        </div>
+        <div class="md:col-span-3">
+          <p class="text-[10px] tracking-luxury uppercase text-gold-light mb-5">Navigate</p>
+          <ul class="space-y-3 text-sm font-light">
+            <li><a href="#home" class="footer-link">Home</a></li>
+            <li><a href="#projects" class="footer-link">Projects</a></li>
+            <li><a href="#services" class="footer-link">Services</a></li>
+            <li><a href="#process" class="footer-link">Process</a></li>
+            <li><a href="#blog" class="footer-link">Blog</a></li>
+          </ul>
+        </div>
+        <div class="md:col-span-4">
+          <p class="text-[10px] tracking-luxury uppercase text-gold-light mb-5">Connect</p>
+          <ul class="space-y-3 text-sm font-light">
+            <li>studio@domea.in</li>
+            <li>+91 98765 43210</li>
+            <li>14 Rose Garden, Bandra West, Mumbai</li>
+          </ul>
+          <div class="mt-8 flex gap-4">
+            <a href="#" aria-label="Instagram" class="social-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="0.5" fill="currentColor"/></svg>
+            </a>
+            <a href="#" aria-label="Pinterest" class="social-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="12" r="9"/><path d="M9 21l3-10m-2 3a3 3 0 1 0 4-4c-2 0-4 2-4 5"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook" class="social-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M15 3h-3a4 4 0 0 0-4 4v3H5v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn" class="social-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-cream/10 pt-8 flex flex-col md:flex-row justify-between gap-4 text-[11px] tracking-wide2 uppercase text-cream/50">
+        <p>© 2026 Doméa Interior Studio. All rights reserved.</p>
+        <p>Crafted with care — Designed for Life</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP & Plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
