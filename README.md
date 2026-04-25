@@ -1,129 +1,131 @@
 # Doméa — Luxury Interior Design Studio
 
-> *Designing Spaces That Speak Luxury.*
+> *Crafted with intention. Designed for Life.*
 
-A fully responsive, single-page website for **Doméa**, a luxury interior design studio crafting timeless, elegant, and high-end residential interiors. Built with a focus on refined typography, generous whitespace, and premium-feeling motion.
+**Doméa** is a luxury interior design studio crafting timeless, elegant living spaces that tell your story. We specialize in bespoke interiors, blending refined aesthetics with functional design—from concept to completion, delivering premium, detail-driven spaces tailored to modern lifestyles.
 
----
-
-## 🌐 Live Preview
-https://domea-interiors-production.up.railway.app/
-```
+🌐 **[Experience Doméa →](https://domea-interiors-production.up.railway.app/)**
 
 ---
 
-## Features
+## ✨ Highlights
 
 - **Fullscreen cinematic hero** with staggered text reveal and parallax imagery
-- **Custom gold cursor** (dot + ring) with hover states on interactive elements
-- **Lenis smooth scroll** synchronised with GSAP ScrollTrigger
-- **Rotating brand marquee** with five tagline variations
+- **Custom luxury cursor** (dot + ring) with intuitive hover states
+- **Buttery smooth scroll** with Lenis + GSAP ScrollTrigger integration
+- **Rotating brand marquee** with dynamic tagline variations
 - **Category-filtered portfolio** — Living Room, Bedroom, Kitchen, Wardrobe, Prayer Room, Bath, Dining
-- **Drag-to-reveal Before / After slider** with animated entrance
-- **4-step Process** section on dark ink background
-- **Floating-label contact form** with success feedback
-- **Luxury loading screen** with brand reveal animation
-- **Mobile-first responsive layout** with elegant hamburger menu
-- **Sticky translucent navbar** that shifts to light-glass on scroll
-- **SEO-ready** — semantic HTML, meta title / description, Open Graph tags
+- **Before / After transformation slider** with drag-to-reveal interaction
+- **Four-step design process** elegantly presented (Consultation → Concept Design → Execution → Final Styling)
+- **Client testimonials** showcasing real luxury projects and satisfied clients
+- **Floating-label contact form** with real-time validation and success feedback
+- **Luxury loading animation** with brand reveal
+- **Mobile-first responsive design** with refined hamburger navigation
+- **Sticky translucent navbar** that elegantly transitions on scroll
+- **Fully optimized** — semantic HTML, meta tags, Open Graph support
 
 ---
 
-## Design System
+## 🎨 Design Philosophy
 
-| Token | Value |
-|---|---|
-| Primary serif | Cormorant Garamond |
-| Primary sans | Inter |
-| Accent (gold) | `#B8935A` |
-| Accent (gold light) | `#D4B684` |
-| Background (pearl) | `#FAF7F2` |
-| Background (cream) | `#F5F1EB` |
-| Ink / charcoal | `#1C1C1C` / `#0A0A0A` |
-| Luxury letter-spacing | `0.28em` |
+A home is more than a space—it is a reflection of identity. At Doméa, we believe every home tells a story. Each project is thoughtfully crafted to balance elegance, comfort, and functionality, where form meets feeling, and every surface is a quiet invitation to live beautifully.
 
-Typography is spaced and light-weighted throughout to communicate restraint — the core visual language of quiet luxury.
+### Brand Colors & Typography
 
----
+| Element | Value |
+|---------|-------|
+| **Primary Serif** | Cormorant Garamond |
+| **Primary Sans** | Inter |
+| **Accent Gold** | `#B8935A` |
+| **Light Gold** | `#D4B684` |
+| **Pearl Background** | `#FAF7F2` |
+| **Cream Background** | `#F5F1EB` |
+| **Ink / Charcoal** | `#1C1C1C` / `#0A0A0A` |
+| **Letter Spacing** | `0.28em` (quiet luxury) |
 
-## Tech Stack
-
-- **HTML5** — semantic markup
-- **Tailwind CSS** (via Play CDN) — utility-first styling
-- **Custom CSS** — luxury-specific animation, typography, and components
-- **GSAP 3 + ScrollTrigger** — scroll-triggered reveals and parallax
-- **Lenis** — buttery-smooth inertial scroll
-- **Vanilla JavaScript** — cursor, filter, slider, form, mobile menu
-
-No build step required. The site is pure static assets.
+The design language emphasizes restraint—light typography, generous spacing, and a sophisticated gold accent create an atmosphere of quiet, timeless luxury.
 
 ---
 
-## Getting Started
+## 🛠️ Tech Stack
 
-### Clone
+| Layer | Technology |
+|-------|-----------|
+| **Markup** | HTML5 (semantic) |
+| **Styling** | Tailwind CSS (Play CDN) + Custom CSS |
+| **Animation** | GSAP 3 + ScrollTrigger |
+| **Smooth Scroll** | Lenis (inertial scroll) |
+| **Interactivity** | Vanilla JavaScript |
+| **Hosting** | Railway |
 
-```bash
-git clone https://github.com/<your-username>/domea.git
-cd domea
-```
-
-### Run locally
-
-Any static HTTP server will do. For example, with Python:
-
-```bash
-python -m http.server 8080
-```
-
-Or with Node:
-
-```bash
-npx serve .
-```
-
-Then visit `http://localhost:8080`.
+*No build step required—pure static assets, optimized for production.*
 
 ---
 
-## Project Structure
+## 📂 Project Structure
 
 ```
-domea/
-├── index.html          # Full single-page site
+domea-interiors/
+├── index.html              # Full single-page site
 ├── css/
-│   └── custom.css      # Luxury styling layer on top of Tailwind
+│   └── custom.css          # Luxury styling layer
 ├── js/
-│   └── main.js         # GSAP animations, Lenis, cursor, filter, slider
+│   └── main.js             # GSAP, Lenis, interactions
+├── images/                 # Project imagery
 └── README.md
 ```
 
 ---
 
-## Sections
+## 📖 Page Sections
 
-1. Loading screen
-2. Navbar (transparent → sticky glass)
-3. Hero — "Designing Spaces That Speak Luxury"
-4. Rotating brand marquee
-5. About Doméa (with studio stats)
-6. Projects — filterable portfolio
-7. Services — six offerings
-8. Process — four chapters
-9. The Doméa Experience — eight luxury features
-10. Before / After transformation slider
-11. Testimonials
-12. Journal (blog previews)
-13. Contact — "Start Your Dream Space"
-14. Footer
+1. **Loading Screen** — Luxury brand reveal animation
+2. **Navbar** — Transparent to sticky glass effect
+3. **Hero** — "Clients on Doméa" with staggered text reveal
+4. **Rotating Marquee** — Five-tagline brand loop
+5. **About Doméa** — Studio story + key stats (120+ Projects, 15+ Years, 48+ Cities)
+6. **Projects** — Filterable portfolio by category
+7. **Services** — Six core offerings
+8. **The Process** — Four quiet chapters (Consultation, Concept Design, Execution, Final Styling)
+9. **Luxury Features** — Eight experiential markers
+10. **Transformation Slider** — Before / After with drag interaction
+11. **Testimonials** — Real client stories from Mumbai, Lonavala, and beyond
+12. **Journal** — Blog / insights previews
+13. **Contact** — "Start Your Dream Space" form
+14. **Footer** — Links + studio info
 
 ---
 
-## Customisation
+## 🚀 Getting Started
 
-### Brand colours
+### Clone the Repository
 
-Edit the Tailwind config block inside `index.html`:
+```bash
+git clone https://github.com/Akeeffarooqi7/Domea-interiors.git
+cd Domea-interiors
+```
+
+### Run Locally
+
+Using Python:
+```bash
+python -m http.server 8080
+```
+
+Using Node:
+```bash
+npx serve .
+```
+
+Then visit **`http://localhost:8080`**
+
+---
+
+## ⚙️ Customization
+
+### Brand Colors
+
+Edit the Tailwind config in `index.html`:
 
 ```js
 tailwind.config = {
@@ -131,8 +133,10 @@ tailwind.config = {
     extend: {
       colors: {
         gold: '#B8935A',
+        'gold-light': '#D4B684',
         cream: '#F5F1EB',
-        // ...
+        pearl: '#FAF7F2',
+        ink: '#1C1C1C'
       }
     }
   }
@@ -141,40 +145,55 @@ tailwind.config = {
 
 ### Typography
 
-Swap the Google Fonts `<link>` in `<head>` and update the `fontFamily` tokens.
+Replace Google Fonts `<link>` in `<head>` and update font families in CSS.
 
-### Imagery
+### Content & Images
 
-Hero and section images reference Unsplash CDN URLs for reliability. Replace any `src` with your own CDN URLs — Pinterest (`i.pinimg.com`), Cloudinary, or a self-hosted `/images/` directory — the proportions and aspect ratios will hold.
-
-### Content
-
-All copy lives directly in `index.html`. Replace project names, testimonials, blog titles, and contact details inline.
+- All copy is inline in `index.html`—easy to update
+- Images reference CDN URLs (Unsplash, Pinterest, Cloudinary)
+- Replace with your own CDN or self-hosted `/images/` directory
+- Portfolio projects, testimonials, and blog previews are fully customizable
 
 ---
 
-## Production Notes
+## 🔧 Production Checklist
 
-- Replace the **Tailwind Play CDN** with a compiled build for production:
+- [ ] Replace **Tailwind Play CDN** with compiled build:
   ```bash
   npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify
   ```
-- Host fonts locally (or via a single `font-display: swap` preload) to avoid FOUT.
-- Connect the contact form to a form endpoint (Formspree, Netlify Forms, or a custom serverless function) — the current submit handler is a front-end demo.
-- Add `rel="preload"` hints for the hero image to improve LCP.
+- [ ] Host fonts locally with `font-display: swap` preload
+- [ ] Connect contact form to backend (Formspree, Netlify Forms, or serverless)
+- [ ] Add image preload hints for LCP optimization
+- [ ] Test across browsers (Chrome, Safari, Firefox, Edge)
+- [ ] Enable gzip compression on hosting
 
 ---
 
-## Browser Support
+## 🌐 Browser Support
 
-Modern evergreen browsers (Chrome, Safari, Firefox, Edge). The floating-label contact form relies on CSS `:has()` which is supported in all current versions.
-
----
-
-## License
-
-Design and code © Doméa Interior Studio. Fonts and imagery are licensed from their respective providers (Google Fonts, Unsplash).
+All modern evergreen browsers. CSS `:has()` selector and modern ES6 JavaScript required.
 
 ---
 
-*Crafted with care — Designed for Life.*
+## 📊 Tech Composition
+
+- HTML: 55.8%
+- CSS: 27.9%
+- JavaScript: 16.3%
+
+---
+
+## 📜 License
+
+Design and code © Doméa Interior Studio. Fonts and imagery licensed from respective providers (Google Fonts, Unsplash).
+
+---
+
+## 💫 Philosophy
+
+*"At Doméa, we believe every home tells a story. Materials, light, silence—we compose interiors the way musicians write symphonies. Drawing from the Latin domus, meaning home, we shape refined interiors for those who understand that luxury is not an ornament—it is an atmosphere."*
+
+---
+
+**Crafted with care. Designed for Life. ✨**
